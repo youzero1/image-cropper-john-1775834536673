@@ -126,65 +126,19 @@
 
 .cropperWrapper {
   position: relative;
-  height: 450px;
   border-radius: 16px;
   overflow: hidden;
   background: #000;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
-/* Free mode resize handles */
-.freeCropArea {
-  /* Ensure the crop area border is clearly visible */
-  border: 2px solid rgba(255, 255, 255, 0.9) !important;
-}
-
-/*
-  react-easy-crop renders handle dots when no aspect ratio is set.
-  We make them bigger and more visible so they are easy to grab.
-*/
-.cropperWrapper :global(.reactEasyCrop_CropArea) {
-  border: 2px solid rgba(255, 255, 255, 0.85);
-}
-
-/* Corner handles */
-.cropperWrapper :global(.reactEasyCrop_CropArea::after),
-.cropperWrapper :global(.reactEasyCrop_CropArea::before) {
-  display: none;
-}
-
-/*
-  react-easy-crop uses data-testid handles; we target them generically.
-  The library injects inline divs for handles when resizable (no aspect).
-  We increase their size and make them visually prominent.
-*/
-.cropperWrapper :global([class*="Handle"]),
-.cropperWrapper :global([data-testid*="handle"]) {
-  background: #e94560 !important;
-  border: 2px solid #fff !important;
-  border-radius: 50% !important;
-  width: 14px !important;
-  height: 14px !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5) !important;
-}
-
-/* Free mode hint banner */
-.freeModeHint {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(233, 69, 96, 0.12);
-  border: 1px solid rgba(233, 69, 96, 0.3);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.8rem;
-  color: #fca5a5;
-  line-height: 1.4;
-}
-
-.freeModeHint svg {
-  flex-shrink: 0;
-  color: #e94560;
+.cropCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  user-select: none;
 }
 
 /* Controls */
@@ -435,10 +389,6 @@
   .resultPanel {
     width: 100%;
     position: static;
-  }
-
-  .cropperWrapper {
-    height: 300px;
   }
 
   .title {

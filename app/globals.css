@@ -11,20 +11,3 @@ body {
   color: #eaeaea;
   min-height: 100vh;
 }
-
-/*
-  Make react-easy-crop resize handles visible and easy to grab in free (no aspect) mode.
-  The library renders 8 handle elements as absolutely-positioned divs inside the crop area.
-*/
-
-/* All 8 directional handles */
-.reactEasyCrop_CropArea [class$="Handle"],
-.reactEasyCrop_CropArea [class*="Handle"] {
-  background-color: #e94560 !important;
-  border: 2px solid #ffffff !important;
-  border-radius: 50% !important;
-  width: 14px !important;
-  height: 14px !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6) !important;
-  opacity: 1 !important;
-}
